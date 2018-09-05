@@ -17,5 +17,17 @@ The following environment variables are parsed and used at the moment
 
 ## Example
 ```bash
-docker run  -dt -p 8080:80 -v /home/data/:/data -e URL_HOST=http://10.11.12.13:8080/ -e ADMIN_PW=pass1234 twiki
+docker run --name twiki -dt -p 8080:80 -v /home/data/:/data -e URL_HOST=http://10.11.12.13:8080/ -e ADMIN_PW=pass1234 twiki
 ```
+
+
+## debug
+
+```bash
+cat /data/data/warn201809.txt
+..
+| 2018-09-05 - 22:48:43 | Registration failed: RCS: failed to create file /var/www/twiki/data/Main/TWikiUsers.txt: Permission denied at /var/www/twiki/lib/TWiki/Store/RcsFile.pm line 910.
+...
+# change to right permission
+```
+
